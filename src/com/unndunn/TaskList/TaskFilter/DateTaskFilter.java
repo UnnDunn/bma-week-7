@@ -2,6 +2,8 @@ package com.unndunn.TaskList.TaskFilter;
 
 import java.util.Date;
 
+import com.unndunn.TaskList.Task;
+
 public abstract class DateTaskFilter implements TaskFilter {
 	private Date StartDate;
 	private Date EndDate;
