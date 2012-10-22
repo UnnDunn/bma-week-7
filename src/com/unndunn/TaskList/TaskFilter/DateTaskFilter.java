@@ -21,4 +21,13 @@ public abstract class DateTaskFilter implements TaskFilter {
 	public Date getEndDate() {
 		return EndDate;
 	}
+	
+	public DateTaskFilter() {
+		StartDate = new Date();
+	}
+	
+	public DateTaskFilter(Date startDate, Date endDate) {
+		StartDate = startDate;
+		EndDate = endDate;
+	}
 }

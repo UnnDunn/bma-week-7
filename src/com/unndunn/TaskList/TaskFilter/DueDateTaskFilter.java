@@ -22,5 +22,12 @@ public class DueDateTaskFilter extends DateTaskFilter {
 		
 		return (Task[]) result.toArray();
 	}
-
+	
+	public DueDateTaskFilter() {
+		super();
+	}
+	
+	public DueDateTaskFilter(Date startDate, Date endDate) {
+		super(startDate, endDate);
+	}
 }
