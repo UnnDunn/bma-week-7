@@ -18,12 +18,10 @@ public class CompletionDateTaskFilter extends DateTaskFilter {
 	@Override
 	public Task[] filter(Task[] tasks) {
 		List<Task> result = new ArrayList<Task>();
-		Date startDate = getStartDate();
-		Date endDate = getEndDate();		
-		
+
 		for (Task currTask : tasks) {
 			Date completionDate = currTask.getCompletionDate();
-			if(startDate.before(completionDate) && endDate.after(completionDate))
+			if(IsInDateRange(completionDate))
 				result.add(currTask);
 		}
 		

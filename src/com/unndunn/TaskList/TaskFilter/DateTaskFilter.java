@@ -49,4 +49,13 @@ public abstract class DateTaskFilter implements TaskFilter {
 			return;
 		}
 	}
+	
+	protected boolean IsInDateRange(Date date)
+	{
+		if(StartDate == null && EndDate != null && date.before(EndDate)) return true;
+		else if(StartDate != null && EndDate == null && date.after(StartDate)) return true;
+		else if(StartDate != null && EndDate == null && date.after(StartDate) && date.before(EndDate)) return true;
+		
+		return false;
+	}
 }

@@ -11,12 +11,10 @@ public class DueDateTaskFilter extends DateTaskFilter {
 	@Override
 	public Task[] filter(Task[] tasks) {
 		List<Task> result = new ArrayList<Task>();
-		Date startDate = getStartDate();
-		Date endDate = getEndDate();		
 		
 		for (Task currTask : tasks) {
 			Date dueDate = currTask.getDueDate();
-			if(startDate.before(dueDate) && endDate.after(dueDate))
+			if(IsInDateRange(dueDate))
 				result.add(currTask);
 		}
 		
