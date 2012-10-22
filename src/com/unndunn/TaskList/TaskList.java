@@ -10,20 +10,10 @@ public class TaskList {
 	public TaskList() {
 		AllTasks = new ArrayList<Task>();
 	}
-
-	public void ListTasks() {
-		if(AllTasks.isEmpty()) {
-			System.out.println("There are no tasks in the list");
-			return;
-		}
-		
-		System.out.println(ShowHeading("All Tasks"));
-		
-		int i = 1;
-		for (Task task : AllTasks) {
-			System.out.println(i + ": " + task + "\n---");
-			i++;
-		}
+	
+	public TaskList(Task[] tasks) {
+		AllTasks = new ArrayList<Task>();
+		for (Task task : tasks) AllTasks.add(task);
 	}
 
 	public void DeleteTask(int index) {
